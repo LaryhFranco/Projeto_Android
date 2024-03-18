@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import {SafeAreaView,Text,Image, TextInput, StyleSheet, Bottom, Button} from 'react-native';
+import {SafeAreaView, View,Text,Image, TextInput, StyleSheet, Button} from 'react-native';
 import Estilo from './estilo'
 
 export default props =>{
 
-    const [text,setText] = useState('')
+    const [text,setText] = useState('');
     const [senha, setSenha] = useState('');
+    const [entrar, setEntrar] = useState('');
+    const [sair, seSair] = useState('');
 
     
 
@@ -29,13 +31,11 @@ export default props =>{
             placeholder="Insira sua senha"
             maxLength={20}
             />
-            <Text style={style.txt}>Nâo tem conta? Clique Aqui.</Text>    
+            <Text style={style.txt}>Nâo tem conta? Clique Aqui.</Text>
+            <View>   
+            <Button style={style.btn} color={'#e884aa'}title="Entrar" />  
+            </View> 
             <Button 
-            color={'#e884aa'}
-            title="Entrar" />  
-
-            <Button style={{marginBottom:15,
-            }}
             color={'#e884aa'}
             title="Sair" />        
 
@@ -66,6 +66,9 @@ const style = StyleSheet.create(
             marginBottom:10,
             marginTop:10,
         },
+        btn:{
+            marginBottom:15,
+        }
        
     }
 )
