@@ -1,22 +1,46 @@
 import React, { useState } from "react";
-import {SafeAreaView, View,Text,Image, TextInput, StyleSheet, Button} from 'react-native';
+import {SafeAreaView, View,Text,Image, TextInput, StyleSheet, Button, Alert} from 'react-native';
 import Estilo from './estilo'
 
 export default props =>{
 
     const [text,setText] = useState('');
     const [senha, setSenha] = useState('');
-    const [entrar, setEntrar] = useState('');
-    const [sair, seSair] = useState('');
+    const [sair, setSair] = useState('');
 
-    
+    function autenticar() {
+        if (text === 'LaryhFranco' && senha === 'La1234'){
+            console.warn('Login Sucedido!')
+            setText('');
+            setSenha('');
+        } else 
+        console.warn('Login Incorreto!')
+    }
 
+    const saida = () => {
+        Alert.alert('Sair', 'Tem certeza que deseja sair?', [
+          {
+            text: 'Cancelar',
+            onPress: () => console.warn('Cancelou a saída'),
+            style: 'cancel',
+          },
+          {
+            text: 'Sair',
+            onPress: () => {
+              console.warn('Saiu do aplicativo');
+            setText('');
+            setSenha('');
+            },
+          },
+        ]);
+      };
 
     return(
         <SafeAreaView>
             <Image style={style.Image} source={require('./image/logoConfeitaria.png')}/>
             <TextInput
             style={style.input}
+            color={'#fff'}
             label= 'Usuário'
             value={text}
             onChangeText={text => setText (text)}
@@ -25,6 +49,7 @@ export default props =>{
             />
             <TextInput
             style={style.input}
+            color={'#fff'}
             onChangeText={setSenha}
             value={senha}
             secureTextEntry= {true}
@@ -33,11 +58,9 @@ export default props =>{
             />
             <Text style={style.txt}>Nâo tem conta? Clique Aqui.</Text>
             <View>   
-            <Button style={style.btn} color={'#e884aa'}title="Entrar" />  
+            <Button style={style.btn} color={'#e884aa'}title="Entrar" onPress={autenticar}/>  
             </View> 
-            <Button 
-            color={'#e884aa'}
-            title="Sair" />        
+            <Button color={'#e884aa'} title="Sair" onPress={saida} />        
 
         </SafeAreaView>
     )
@@ -53,9 +76,10 @@ const style = StyleSheet.create(
             padding: 10,
             marginTop:50,
             borderColor:'#ffff',
-            
         },
         Image:{
+            height:150,
+            width:150,
             alignItems:"center",
             justifyContent:'center',
             marginTop:100,
