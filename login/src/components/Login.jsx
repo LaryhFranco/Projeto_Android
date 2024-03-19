@@ -4,14 +4,13 @@ import Estilo from './estilo'
 
 export default props =>{
 
-    const [text,setText] = useState('');
+    const [usuario,setUsuario] = useState('');
     const [senha, setSenha] = useState('');
-    const [sair, setSair] = useState('');
 
     function autenticar() {
-        if (text === 'LaryhFranco' && senha === 'La1234'){
+        if (usuario === 'LaryhFranco' && senha === 'La1234'){
             console.warn('Login Sucedido!')
-            setText('');
+            setUsuario('');
             setSenha('');
         } else 
         console.warn('Login Incorreto!')
@@ -28,7 +27,7 @@ export default props =>{
             text: 'Sair',
             onPress: () => {
               console.warn('Saiu do aplicativo');
-            setText('');
+            setUsuario('');
             setSenha('');
             },
           },
@@ -42,8 +41,8 @@ export default props =>{
             style={style.input}
             color={'#fff'}
             label= 'Usuário'
-            value={text}
-            onChangeText={text => setText (text)}
+            value={usuario}
+            onChangeText={usuario => setUsuario (usuario)}
             maxLength={20}
             placeholder="Insira seu usuário"
             />
@@ -74,17 +73,12 @@ const style = StyleSheet.create(
             borderWidth: 1,
             borderRadius:10,
             padding: 10,
-            marginTop:50,
+            marginTop:40,
             borderColor:'#ffff',
         },
         Image:{
-            height:150,
-            width:150,
-            alignItems:"center",
-            justifyContent:'center',
             marginTop:100,
-            borderWidth:1,
-            padding:10, 
+            padding:84,            
         },
         txt:{
             marginBottom:10,
