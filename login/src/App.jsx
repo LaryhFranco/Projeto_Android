@@ -3,13 +3,14 @@ import { View , StyleSheet} from "react-native";
 
 import Login from './components/Login'
 import CadastroCliente from "./components/CadastroCliente";
+import MenuPrincipal from "./components/MenuPrincipal";
 
 export default ()=>{
     return(
         <View style={style.fundo}>
             {/* <Login/>  */}
             <CadastroCliente/>
-            
+            {/* <MenuPrincipal/> */}
         </View>
     )
 }

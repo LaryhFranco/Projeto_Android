@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import {SafeAreaView, View,Text,Image, TextInput, StyleSheet, Button, Alert} from 'react-native';
-import Estilo from './estilo'
 
 export default props =>{
 

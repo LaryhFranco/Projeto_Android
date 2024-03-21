@@ -30,7 +30,7 @@ export default props =>{
             color={`#fff`}
             />
             <TextInput
-            style={style.input2}
+            style={style.input1}
             label="email"
             value={email}
             onChangeText={email => setEmail (email)}
@@ -40,7 +40,7 @@ export default props =>{
             color={`#fff`}
             />
             <TextInput
-            style={style.input3}
+            style={style.input2}
             label="telefone"
             value={telefone}
             onChangeText={telefone => setTelefone (telefone)}
@@ -51,7 +51,7 @@ export default props =>{
             maxLength={11}
             />
             <TextInput
-            style={style.input2}
+            style={style.input1}
             label="endereço"
             value={endereço}
             onChangeText={endereço => setEndereço (endereço)}
@@ -61,7 +61,7 @@ export default props =>{
             />
             <View style={style.container1}>
             <TextInput
-            style={style.input4}
+            style={style.input3}
             label="numero"
             value={numero}
             onChangeText={numero => setNumero (numero)}
@@ -72,7 +72,7 @@ export default props =>{
             maxLength={8}
             />
             <TextInput
-            style={style.input4}
+            style={style.input3}
             label="cep"
             value={cep}
             onChangeText={cep => setCep (cep)}
@@ -83,19 +83,44 @@ export default props =>{
             maxLength={8}
             />
             </View>
+            <TextInput
+            style={style.input1}
+            label="cidade"
+            value={cidade}
+            onChangeText={cidade => setCidade (cidade)}
+            placeholder="Cidade"
+            placeholderTextColor={`#fff`}
+            color={`#fff`}
+            />
+            <TextInput
+            style={style.input1}
+            label="estado"
+            value={estado}
+            onChangeText={estado => setEstado (estado)}
+            placeholder="Estado"
+            placeholderTextColor={`#fff`}
+            color={`#fff`}
+            keyboardType="numeric"
+            maxLength={8}
+            />
         
-            <View style={style.container3}>
-            <Button color={'#e884aa'}
-            title="Cadastrar" />  
-            <Button color={'#e884aa'}
-            title="Alterar" />  
+        <View style={[style.btnCima]}>
+            <View style={[style.btnIni]}>
+                <Button title="Cadastrar" color={`#e884aa`}/>
             </View>
-            <View style={style.container4}>
-            <Button style={style.btn}color={'#e884aa'}
-            title="Excluir" />  
-            <Button color={'#e884aa'}
-            width={0}
-            title="Pesquisar" />  
+            <View style={[style.btnIni]}>
+                <Button title="Alterar" color={`#e884aa`}/>  
+            </View>
+            
+        </View>
+            
+            <View style={[style.btnBaixo]}>
+            <View style={[style.btnIni]}>
+                <Button title="Excluir" color={`#e884aa`}/>
+            </View> 
+            <View style={[style.btnIni]}>
+                <Button title="Pesquisar" color={`#e884aa`}/>
+            </View> 
             </View>
             
             
@@ -105,6 +130,11 @@ export default props =>{
 
 const style = StyleSheet.create(
     {
+        Image:{
+            marginLeft:10,
+            marginTop:50,
+            padding:80,            
+        },
         input1:{
             height:40,
             backgroundColor: '#eba9c2',
@@ -112,22 +142,18 @@ const style = StyleSheet.create(
             borderWidth: 1,
             borderRadius:10,
             padding: 10,
-            marginLeft:30,
-            marginTop:50,
+            marginLeft:20,
+            marginTop:20,
             borderColor:'#ffff',
-        },
-        Image:{
-            marginTop:50,
-            padding:80,            
         },
         input2:{
             height:40,
             backgroundColor: '#eba9c2',
-            width: 350,
+            width: 170,
             borderWidth: 1,
             borderRadius:10,
             padding: 10,
-            marginLeft:30,
+            marginLeft:20,
             marginTop:20,
             borderColor:'#ffff',
         },
@@ -137,56 +163,50 @@ const style = StyleSheet.create(
             width: 170,
             borderWidth: 1,
             borderRadius:10,
-            padding: 10,
-            marginLeft:30,
-            marginTop:20,
-            borderColor:'#ffff',
-        },
-        input4:{
-            height:40,
-            backgroundColor: '#eba9c2',
-            width: 170,
-            borderWidth: 1,
-            borderRadius:10,
-            padding: 10,
+            padding: 9,
             marginTop:5,
             borderColor:'#ffff',
+            marginRight:10,
+            marginLeft:5,   
         },
         container1:{
             flexDirection: 'row',
             justifyContent: 'space-between',
             alignItems: 'center', 
-            padding:15,
+            padding:0,
             marginLeft:15,
             marginRight:15, 
-            marginBottom:10,
-
+            marginTop:15,
         },
         container2:{
             flexDirection: 'row',
             justifyContent: 'space-between',
             alignItems: 'center',
         },
-        container3:{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            marginLeft:90,
-            marginRight:100,
-            marginBottom:10,
-        },
-        container4:{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            marginLeft:90,
-            marginRight:100,
-        },
+        
         txtG:{
             fontSize:20,
             marginRight:30,
             color: "#fff"
         },
-       
+        btnCima:{
+            alignSelf:'flex-start',
+            flexGrow:1,
+            flexDirection: 'row',
+
+        },
+        btnIni:{
+            height:50,
+            width:150,
+            marginTop:5,
+            marginLeft:25,
+
+        },
+        btnBaixo:{
+            alignSelf:'flex-start',
+            flexGrow:1,
+            flexDirection: 'row',
+            marginTop:2,
+        },
     }
 )
