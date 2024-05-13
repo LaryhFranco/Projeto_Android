@@ -24,7 +24,7 @@ return(
 
 
                 <View  style={style.input}>
-                    <Icon style={style.icon} name='mail-outline' size={20} color="gray"/>
+                    <Icon style={style.icon} name='person-sharp' size={20} color="gray"/>
                     <TextInput
                         style={style.input}
                         label="nome"
@@ -36,7 +36,7 @@ return(
                 </View>
                 <View style={style.separador}></View>
                     <View  style={style.input2}>
-                        <Icon style={style.icon} name='person-sharp' size={20} color="gray"/>
+                        <Icon style={style.icon} name='mail-outline' size={20} color="gray"/>
                         <TextInput
                             style={style.input3}
                             label="email"
