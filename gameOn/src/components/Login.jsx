@@ -120,7 +120,6 @@ const style = StyleSheet.create(
         txtBtn:{
             color:"#fff",
             fontSize:18,
-
         },
         txtOr:{
             marginLeft:'40%',
@@ -129,7 +128,6 @@ const style = StyleSheet.create(
             marginBottom:15,
         },
         press:{
-            
             height:40,
             borderWidth:1,
             borderRadius:4,

@@ -1,0 +1,32 @@
+export default [
+    {
+        id:1,
+        name:"Thor",
+        email:"thor.almeida@gmail.com",
+        avatarURL:"https://cdn.pixabay.com/photo/2024/03/28/18/06/dog-8661433_960_720.png",
+    },
+    {
+        id:2,
+        name:"Ana",
+        email:"anaju.lopes@gmail.com",
+        avatarURL:"https://cdn.pixabay.com/photo/2021/11/12/03/04/woman-6787784_1280.png",
+    },
+    {
+        id:3,
+        name:"Pingo",
+        email:"pingo.pi@gmail.com",
+        avatarURL:"https://cdn.pixabay.com/photo/2016/03/31/19/58/avatar-1295429_1280.png",
+    },
+    {
+        id:4,
+        name:"Poico",
+        email:"poico.co@gmail.com",
+        avatarURL:"https://cdn.pixabay.com/photo/2016/03/31/20/11/avatar-1295575_960_720.png",
+    },
+    {
+        id:5,
+        name:"hamster",
+        email:"hamster.ham@gmail.com",
+        avatarURL:"https://cdn.pixabay.com/photo/2016/03/31/20/31/amazed-1295833_960_720.png",
+    },
+]
