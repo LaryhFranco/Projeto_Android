@@ -1,20 +1,21 @@
 import React from "react";
-import { View,Text, StyleSheet } from "react-native";
-
+import { SafeAreaView } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Conta from "./components/Conta";
+import Cadastrar from "./components/Cadastrar";
+
+const Stack = createNativeStackNavigator();
 
 export default () => {
     return(
-        <View>
-            <Conta/>
-        </View>
+        <SafeAreaView style={{flex:1,}}>
+            <NavigationContainer>
+                <Stack.Navigator initialRouteName="cadastrar" screenOptions={{headerShown:false,}}>
+                    <Stack.Screen name="conta" component={Conta}></Stack.Screen>
+                    <Stack.Screen name="cadastrar" component={Cadastrar}></Stack.Screen>
+                </Stack.Navigator>
+            </NavigationContainer>
+        </SafeAreaView>
     )
 }
-
-const style = StyleSheet.create(
-    {
-        fundo:{
-            backgroundColor:"#ffff",
-        },
-    }
-)

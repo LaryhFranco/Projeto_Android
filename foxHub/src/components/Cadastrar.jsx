@@ -1,29 +1,44 @@
-import React, { useState } from "react";
-import { View,Text, StyleSheet, SafeAreaView, Image, TextInput, Pressable} from "react-native";
+import React,{useState} from "react";
+import { View, Text, TextInput, Image, StyleSheet,Pressable} from "react-native";
 import Icon from 'react-native-vector-icons/Ionicons';
 
-export default props => {
 
+export default props => {
     const [email,setEmail] = useState ('');
+    const [nome,setNome] = useState ('');
     const [senha, setSenha] = useState('');
 
-    return(
-        <SafeAreaView style={style.fundo}>
-            <View>
+return(
+    <View style={style.fundo}>
+        <View >
             <Image style={style.image} source={require('./Image/FOXHUB_Logo.png')}/>
             </View>
-            <View>
-                <Text style={style.txtG}>
-                    Welcome back,
-                </Text>
                 <View>
-                    <Text style={{marginBottom:20, marginLeft:20,}}>Sing in to continue</Text>
+                    <Text style={style.txtG}>
+                        Welcome back,
+                    </Text>
+                    <View>
+                        <Text style={{marginBottom:20, marginLeft:20,}}>Sing in to continue</Text>
+                    </View>
                 </View>
-            </View>
-            <View  style={style.input}>
-                        <Icon style={style.icon} name='mail-outline' size={20} color="gray"/>
+
+
+                <View  style={style.input}>
+                    <Icon style={style.icon} name='mail-outline' size={20} color="gray"/>
+                    <TextInput
+                        style={style.input}
+                        label="nome"
+                        value={nome}
+                        onChangeText={nome => setNome (nome)}
+                        placeholder="Nome"
+                        placeholderTextColor={'#a8a8a8'}
+                    />
+                </View>
+                <View style={style.separador}></View>
+                    <View  style={style.input2}>
+                        <Icon style={style.icon} name='person-sharp' size={20} color="gray"/>
                         <TextInput
-                            style={style.input}
+                            style={style.input3}
                             label="email"
                             value={email}
                             onChangeText={email => setEmail (email)}
@@ -31,32 +46,28 @@ export default props => {
                             placeholderTextColor={'#a8a8a8'}
                         />
                     </View>
-
-                        <View style={style.separador}></View>
-                    
-                    <View style={style.input3}>
-                    <Icon style={style.icon} name='lock-closed-outline' size={20} color="gray"/>
+                <View style={style.separador}></View>
+                    <View  style={style.input2}>
+                        <Icon style={style.icon} name='lock-closed-outline' size={20} color="gray"/>
                         <TextInput
-                        style={style.input2}
-                        label="senha"
-                        value={senha}
-                        onChangeText={Senha => setSenha (senha)}
-                        placeholder="Senha"
-                        placeholderTextColor={'#a8a8a8'}
+                            style={style.input3}
+                            label="senha"
+                            value={senha}
+                            onChangeText={senha => setSenha (senha)}
+                            placeholder="Senha"
+                            placeholderTextColor={'#a8a8a8'}
                         />
                     </View>
-
-                        <View style={style.separador}></View>
-                
+                <View style={style.separador}></View>
                     <View style={style.view}>
                         <Pressable style={style.press}>
-                            <Text style={style.txtPress}>Sing In</Text>
+                            <Text style={style.txtPress}>Sing Up</Text>
                         </Pressable>
-                    
                             <View>
                                 <Text style={style.txtOr}>Or</Text>
                             </View>
-                            <View style={style.pressContainer}>
+                    </View>
+                    <View style={style.pressContainer}>
                                     <Pressable style={style.press1}>
                                             <Text style={style.txt}>Sing in with </Text>
                                                 <Image source={require('./Image/google.png')}/>
@@ -65,42 +76,35 @@ export default props => {
                                         <Text style={style.txt}>Sing in with </Text>
                                         <Image source={require('./Image/facebook.png')}/>
                                     </Pressable>
-                            </View>
-                                <View style={style.txtContainer}>
-                                    <Text>Don't have an account?<Text onPress={() => props.navigation.navigate ("cadastrar")}style={style.txt1}>Sing up</Text></Text>
-                                </View>
                     </View>
-        </SafeAreaView>
-    )
+                        <View style={style.txtContainer}>
+                                    <Text>Already have an account?<Text onPress={() => props.navigation.navigate ("conta")}style={style.txt1}>Sing in</Text></Text>
+                         </View>
+    </View>
+)
 }
+
 
 const style = StyleSheet.create(
     {
-        fundo:{
-            backgroundColor:"#ffff",
-            flex:1,
+        press:{
+            marginLeft:-40,
+            marginTop:50,
+            backgroundColor:'#20509e',
+            height:40,
+            width:270,
+            alignItems:'center',
+            justifyContent:'center',
+            borderRadius:5,
         },
         image:{
             marginTop:60,
             marginBottom:60,
             marginLeft:20,
-
         },
-        txtG:{
-            fontSize:30,
-            marginLeft:20,
-            fontWeight: "bold", 
-            color:'black', 
-            fontSize:30
-        },
-        txt:{
-            color:'black', 
-        },
-        txt1:{
-            color:'red', 
-        },
-        txtContainer:{
-            marginTop:"20%",
+        fundo:{
+            backgroundColor:"#ffff",
+            flex:1,
         },
         input:{
             width: 150,
@@ -114,7 +118,7 @@ const style = StyleSheet.create(
         input2:{
             width: 150,
             borderRadius:0,
-            marginTop:40,
+            marginTop:-20,
             fontSize:15,
             flexDirection:'row',
             alignItems:'center',
@@ -123,11 +127,15 @@ const style = StyleSheet.create(
         input3:{
             width: 150,
             borderRadius:0,
-            marginTop:-20,
+            marginTop:40,
             fontSize:15,
             flexDirection:'row',
             alignItems:'center',
             color:'#a8a8a8',
+        },
+        icon:{
+            marginLeft:20, 
+            marginTop:40,
         },
         separador:{
             marginLeft:20,
@@ -142,25 +150,18 @@ const style = StyleSheet.create(
             width:"90%",
             backgroundColor:'gray',
         },
-        press:{
-            marginLeft:-40,
-            marginTop:50,
-            backgroundColor:'#20509e',
-            height:40,
-            width:270,
-            alignItems:'center',
-            justifyContent:'center',
-            borderRadius:5,
+        txtG:{
+            fontSize:30,
+            marginLeft:20,
+            fontWeight: "bold", 
+            color:'black', 
+            fontSize:30
         },
-        txtPress:{
-            color:"white",
+        txt1:{
+            color:'red', 
         },
         view:{
             marginLeft:"30%",
-        },
-        icon:{
-            marginLeft:20, 
-            marginTop:40,
         },
         txtOr:{
             marginLeft:'25%',
@@ -168,6 +169,23 @@ const style = StyleSheet.create(
             color:"black",
             marginBottom:15,
             fontWeight:'bold'
+        },
+        txtPress:{
+            color:"white",
+        },
+        pressContainer:{
+            marginLeft:50,
+            marginRight:100,
+            flexDirection:'row',
+            justifyContent:'center'
+            
+        },
+        txtContainer:{
+            alignItems:"center",
+            marginTop:"20%",
+        },
+        txt:{
+            color:'black', 
         },
         press1:{
             height:40,
@@ -181,12 +199,6 @@ const style = StyleSheet.create(
             marginLeft:'10%',  
             flexDirection:"row" 
         },
-        pressContainer:{
-            marginLeft:-50,
-            marginRight:100,
-            flexDirection:'row',
-            justifyContent:'center'
-            
-        },
     }
 )
+ 
