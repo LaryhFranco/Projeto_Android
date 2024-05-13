@@ -83,6 +83,7 @@ export default props =>{
                                 <View style={style.separador}></View>
 
                                 <Pressable 
+                                onPress={() => props.navigation.navigate("GameOn")}
                                         style={style.btn}>
                                             <Text style={style.txtBtn}>Register</Text>
                                         </Pressable>

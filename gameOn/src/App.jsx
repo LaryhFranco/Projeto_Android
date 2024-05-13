@@ -13,7 +13,7 @@ export default props => {
         <SafeAreaView  style={{flex:1,}}>
             <NavigationContainer>
                 <Stack.Navigator initialRouteName="GAMEON" screenOptions={{headerShown:false,}}>
-                    <Stack.Screen name="GAMEON" component={GameOn}/>
+                    <Stack.Screen name="GameOn" component={GameOn}/>
                     <Stack.Screen name="login" component={Login}/>
                     <Stack.Screen name="register" component={Register}/>
                 </Stack.Navigator>
