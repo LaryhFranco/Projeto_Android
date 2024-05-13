@@ -18,7 +18,7 @@ return(
                         Welcome back,
                     </Text>
                     <View>
-                        <Text style={{marginBottom:20, marginLeft:20,}}>Sing in to continue</Text>
+                        <Text style={{marginBottom:20, marginLeft:20,}}>Sing up to continue</Text>
                     </View>
                 </View>
 

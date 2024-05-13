@@ -11,7 +11,7 @@ export default () => {
     return(
         <SafeAreaView style={{flex:1,}}>
             <NavigationContainer>
-                <Stack.Navigator initialRouteName="cadastrar" screenOptions={{headerShown:false,}}>
+                <Stack.Navigator initialRouteName="conta" screenOptions={{headerShown:false,}}>
                     <Stack.Screen name="conta" component={Conta}></Stack.Screen>
                     <Stack.Screen name="cadastrar" component={Cadastrar}></Stack.Screen>
                 </Stack.Navigator>
