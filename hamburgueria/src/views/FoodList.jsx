@@ -1,5 +1,5 @@
 import React from "react";
-import{ View, FlatList, StyleSheet } from "react-native"
+import{ View, FlatList, StyleSheet,Button } from "react-native"
 import food from "../data/food";
 import { ListItem,Avatar,ThemeProvider} from "@rneui/themed";
 
@@ -14,9 +14,9 @@ export default props => {
                     <Avatar source={{uri: food.avatarURL}}/>
                         <ListItem.Content>
                             <ListItem.Title>{food.name}</ListItem.Title>
-                            <ListItem.Title>{food.text}</ListItem.Title>
-                            <ListItem.Title>{food.txt}</ListItem.Title>
-                            <ListItem.Title>{food.price}</ListItem.Title>
+                            <ListItem.Title>{food.descricao}</ListItem.Title>
+                            <ListItem.Title>{food.descri}</ListItem.Title>
+                            <ListItem.Title style={style.price}>{food.price}</ListItem.Title>
                         </ListItem.Content>
 
                         <ListItem.Chevron 
@@ -37,10 +37,10 @@ export default props => {
                             onPress={
                                 ()=> props.navigation.navigate('FoodForm', food)
                         }/>
-                   
-                            
+                              
                 </ListItem>
             </ThemeProvider>
+            
         )
     }
 
@@ -51,6 +51,13 @@ export default props => {
                 data={food}
                  renderItem={getFoodItem}
           />  
+          <Button
+                color={"green"}
+                title="Continue"
+                onPress={()=> { 
+                 props.navigation.navigate("FoodForm")
+                  }}
+        />
         </View>
     )
 }
@@ -62,9 +69,10 @@ const style = StyleSheet.create(
         },
         list:{
             marginBottom:15,
+        
         },
-        quant:{
-            flexDirection:""
+        price:{
+            color:"green"
         },
         
     }

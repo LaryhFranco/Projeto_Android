@@ -47,6 +47,6 @@ const style = StyleSheet.create(
             borderColor:"gray",
             borderWidth:1,
             marginBottom:15,
-        }
+        },
     }
 )
