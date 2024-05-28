@@ -32,7 +32,7 @@ export default ({route, navigation}) => {
             />
             <Text>quant</Text>
             <TextInput style={style.input}
-            onChangeNumber={quant => setFood({...food,quant})}
+            onChangeText={quant => setFood({...food,quant})}
             placeholder="Insira a quantidade"
             value={food.quant}
             keyboardType="numeric"

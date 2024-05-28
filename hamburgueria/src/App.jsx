@@ -6,13 +6,17 @@ import { Button } from '@rneui/base';
 import  Icon  from 'react-native-vector-icons/Ionicons';
 import FoodList from './views/FoodList';
 import FoodForm from './views/FoodForm';
+import Frutas from './views/FrutasMap';
+import PessoasFilter from './views/PessoasFilter';
+import FrutasCaras from './views/FrutasCaras';
+import CarrinhoReduce from './views/CarrinhoReduce';
 
 const Stack = createNativeStackNavigator();
 
 export default props => {
     return(
         <NavigationContainer>
-            <Stack.Navigator initialRouteName='FoodList'
+            <Stack.Navigator initialRouteName='Reduce'
             screenOptions={
                 {
                     headerStyle:{
@@ -44,6 +48,10 @@ export default props => {
 
                 </Stack.Screen>
                 <Stack.Screen name='FoodForm' component={FoodForm}></Stack.Screen>
+                <Stack.Screen name='Fruta' component={Frutas}></Stack.Screen>
+                <Stack.Screen name='Pessoas' component={PessoasFilter}></Stack.Screen>
+                <Stack.Screen name='FCaras' component={FrutasCaras}></Stack.Screen>
+                <Stack.Screen name='Reduce' component={CarrinhoReduce}></Stack.Screen>
             </Stack.Navigator>
         </NavigationContainer>
     )

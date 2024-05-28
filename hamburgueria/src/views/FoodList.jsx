@@ -1,5 +1,5 @@
 import React from "react";
-import{ View, FlatList, StyleSheet,Button } from "react-native"
+import{ View, Text,FlatList, StyleSheet,Button } from "react-native"
 import food from "../data/food";
 import { ListItem,Avatar,ThemeProvider} from "@rneui/themed";
 
@@ -7,7 +7,8 @@ export default props => {
 
     function getFoodItem({item:food}){
 
-
+        
+        
         return(
             <ThemeProvider>
                 <ListItem style={style.list}>
@@ -57,7 +58,7 @@ export default props => {
                 onPress={()=> { 
                  props.navigation.navigate("FoodForm")
                   }}
-        />
+        /> 
         </View>
     )
 }
